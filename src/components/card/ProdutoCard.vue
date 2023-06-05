@@ -1,7 +1,9 @@
 <template>
   <div class="row">
     <div class="col-12 col-md-3">
-      <p><strong>{{ data.produto }}</strong></p>
+      <p>
+        <strong>{{ data.produto }}</strong>
+      </p>
       <img
         :src="'http://localhost/admin/fotos/' + data.imagem + 'p.jpg'"
         class="w-100"

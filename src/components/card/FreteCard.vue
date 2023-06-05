@@ -1,11 +1,11 @@
 <template>
   <div class="card">
-    <FreteForm/>
+    <FreteForm />
   </div>
 </template>
 
 <script setup>
-import FreteForm from '../FreteForm.vue';
+import FreteForm from '../FreteForm.vue'
 </script>
 
 <style scoped>

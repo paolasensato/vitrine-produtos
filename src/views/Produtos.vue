@@ -7,15 +7,15 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
-import { useProdutoStore } from '../stores/produto.js';
-import ProdutosCard from '../components/card/ProdutosCard.vue';
+import { computed } from 'vue'
+import { useProdutoStore } from '../stores/produto.js'
+import ProdutosCard from '../components/card/ProdutosCard.vue'
 
-const store = useProdutoStore();
+const store = useProdutoStore()
 
 const produtos = computed(() => {
-  return store.getProdutos;
-});
+  return store.getProdutos
+})
 </script>
 
 <style scoped>

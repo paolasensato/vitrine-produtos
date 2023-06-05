@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
-import axios from "../api/axios.config"
-import formataValor from "../helpers/formataValor.js"
+import axios from '../api/axios.config'
+import formataValor from '../helpers/formataValor.js'
 
-export const useCategoriaStore = defineStore("categorias", {
+export const useCategoriaStore = defineStore('categorias', {
   state: () => ({
     categorias: [],
     produtos: []
@@ -17,7 +17,8 @@ export const useCategoriaStore = defineStore("categorias", {
   },
   actions: {
     async fetchCategorias() {
-      await axios.get('/categorias')
+      await axios
+        .get('/categorias')
         .then((response) => {
           this.categorias = response.data
         })
@@ -26,16 +27,17 @@ export const useCategoriaStore = defineStore("categorias", {
         })
     },
     async fetchProdutosCategoria(id) {
-      await axios.get(`/categoria/${id}`)
+      await axios
+        .get(`/categoria/${id}`)
         .then((response) => {
-          this.produtos = response.data;
-          this.produtos.map(produto => {
-            produto.valor = formataValor(produto.valor);
-          });
+          this.produtos = response.data
+          this.produtos.map((produto) => {
+            produto.valor = formataValor(produto.valor)
+          })
         })
         .catch((error) => {
-          alert(error);
+          alert(error)
         })
     }
-  },
+  }
 })

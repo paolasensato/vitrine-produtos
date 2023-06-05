@@ -4,7 +4,7 @@
       <ProdutoCard :data="produto" />
     </div>
     <div class="col col-12 col-md-4">
-      <FreteCard/>
+      <FreteCard />
     </div>
   </div>
 </template>
@@ -14,7 +14,7 @@ import { computed, onMounted } from 'vue'
 import { useProdutoStore } from '../stores/produto'
 import { useRoute } from 'vue-router'
 import ProdutoCard from '../components/card/ProdutoCard.vue'
-import FreteCard from '../components/card/FreteCard.vue';
+import FreteCard from '../components/card/FreteCard.vue'
 
 const route = useRoute()
 const store = useProdutoStore()

@@ -1,9 +1,9 @@
-import axios from 'axios';
+import axios from 'axios'
 
 const baseConfig = {
   baseURL: `http://localhost/admin/api/`
-};
+}
 
-const axiosInstance = axios.create(baseConfig);
+const axiosInstance = axios.create(baseConfig)
 
-export default axiosInstance;
+export default axiosInstance

@@ -2,7 +2,13 @@
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a class="navbar-brand logo" href="/">
-        <img src="../assets/panda.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">Sensato
+        <img
+          src="../assets/panda.png"
+          alt="Logo"
+          width="30"
+          height="24"
+          class="d-inline-block align-text-top"
+        />Sensato
       </a>
       <button
         class="navbar-toggler"
@@ -35,7 +41,11 @@
             </a>
             <ul class="dropdown-menu">
               <div v-for="categoria in categorias" :key="categoria.id">
-                <li><a class="dropdown-item" :href="'/produtos/categoria/'+categoria.id">{{categoria.categoria}}</a></li>
+                <li>
+                  <a class="dropdown-item" :href="'/produtos/categoria/' + categoria.id">{{
+                    categoria.categoria
+                  }}</a>
+                </li>
               </div>
             </ul>
           </li>
@@ -46,16 +56,15 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
-import { useCategoriaStore } from '../stores/categoria';
+import { computed } from 'vue'
+import { useCategoriaStore } from '../stores/categoria'
 import { RouterLink } from 'vue-router'
 
-
-const store = useCategoriaStore();
+const store = useCategoriaStore()
 
 const categorias = computed(() => {
-  return store.getCategorias;
-});
+  return store.getCategorias
+})
 </script>
 
 <style>

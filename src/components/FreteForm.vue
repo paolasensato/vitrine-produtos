@@ -23,6 +23,6 @@ const form = reactive({
 })
 
 const onSubmit = async () => {
-  console.log('Submit');
+  console.log('Submit')
 }
 </script>
