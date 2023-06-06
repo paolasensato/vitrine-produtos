@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row h-100">
     <p>
       <strong>{{ data.produto }}</strong>
     </p>
@@ -26,7 +26,6 @@ const props = defineProps({
 <style scoped>
 .row {
   background-color: #ffffffff;
-  margin-right: 50px;
 }
 
 @media screen and (max-width: 768px) {

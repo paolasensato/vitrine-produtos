@@ -1,6 +1,11 @@
 <template>
-  <div class="card">
-    <FreteForm :data="data"/>
+  <div class="card h-100">
+    <div class="valor">
+      <h3>{{ valorFormatado }}</h3>
+    </div>
+    <div class="frete-session">
+      <FreteForm :data="valor"/>
+    </div>
   </div>
 </template>
 
@@ -8,7 +13,8 @@
 import FreteForm from '../FreteForm.vue';
 
 const props = defineProps({
-  data: Number
+  valor: Number,
+  valorFormatado: String
 });
 </script>
 

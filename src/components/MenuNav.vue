@@ -58,7 +58,6 @@
 <script setup>
 import { computed } from 'vue'
 import { useCategoriaStore } from '../stores/categoria'
-import { RouterLink } from 'vue-router'
 
 const store = useCategoriaStore()
 
