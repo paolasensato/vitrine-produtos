@@ -1,12 +1,14 @@
 <template>
-  <div class="row">
-    <div class="col col-12 col-md-8">
-      <ProdutoCard :data="produto" />
+  <section class="produto">
+    <div class="row">
+      <div class="col col-12 col-md-8">
+        <ProdutoCard :data="produto" />
+      </div>
+      <div class="col col-12 col-md-4">
+        <FreteCard :valor="produto.valor" :valorFormatado="produto.valorFormatado" />
+      </div>
     </div>
-    <div class="col col-12 col-md-4">
-      <FreteCard :valor="produto.valor" :valorFormatado="produto.valorFormatado" />
-    </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
@@ -29,6 +31,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.produto {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 @media screen and (max-width: 768px) {
   .col {
     margin-top: 10%;
