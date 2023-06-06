@@ -11,7 +11,7 @@
       />
     </div>
     <div class="col-12 col-md-9 text-center py-5">
-      <p>{{ data.valor }}</p>
+      <p>{{ data.valorFormatado }}</p>
       <p v-html="data.descricao"></p>
     </div>
   </div>

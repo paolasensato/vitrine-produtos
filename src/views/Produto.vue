@@ -4,7 +4,7 @@
       <ProdutoCard :data="produto" />
     </div>
     <div class="col col-12 col-md-4">
-      <FreteCard />
+      <FreteCard :data="produto.valor"/>
     </div>
   </div>
 </template>

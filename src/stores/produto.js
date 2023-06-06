@@ -34,7 +34,7 @@ export const useProdutoStore = defineStore('produtos', {
         .get(`/produto/${id}`)
         .then((response) => {
           this.produto = response.data
-          this.produto.valor = formataValor(this.produto.valor)
+          this.produto.valorFormatado = formataValor(this.produto.valor)
         })
         .catch((error) => {
           alert(error)
