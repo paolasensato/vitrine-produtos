@@ -1,7 +1,7 @@
 <template>
   <h3><strong>Produtos</strong></h3>
   <div class="row">
-    <div class="col col-12 col-md-4" v-for="(produto, index) in produtos" :key="index">
+    <div class="col col-12 col-md-3" v-for="(produto, index) in produtos" :key="index">
       <ProdutosCard :data="produto" />
     </div>
   </div>
