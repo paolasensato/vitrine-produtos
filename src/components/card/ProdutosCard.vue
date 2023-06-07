@@ -1,5 +1,5 @@
 <template>
-  <RouterLink :to="'/produtos/' + id" class="link">
+  <a :href="'/produtos/' + id" class="link">
     <div class="card shadowh-100 h-100">
       <div class="header-img h-100">
         <img
@@ -13,11 +13,10 @@
         <p class="card-text text-center">{{ valor }}</p>
       </div>
     </div>
-  </RouterLink>
+  </a>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 
 const props = defineProps({
   data: Object
