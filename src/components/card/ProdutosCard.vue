@@ -1,12 +1,12 @@
 <template>
   <RouterLink :to="'/produtos/' + id" class="link">
-    <div class="card">
+    <div class="card h-100">
       <img
         :src="'http://localhost/admin/fotos/' + imagem + 'p.jpg'"
         :alt="produto"
         class="card-img"
       />
-      <div class="card-body text-center">
+      <div class="card-body">
         <h5 class="card-title text-break">{{ produto }}</h5>
         <p class="card-text">{{ valor }}</p>
       </div>
@@ -29,7 +29,7 @@ const { id, produto, valor, imagem } = props.data
   text-decoration: none;
 }
 .card {
-  height: 100%;
+  border: 0;
 }
 .card-img {
   border-radius: 10px 10px;

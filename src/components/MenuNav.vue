@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-light">
+  <nav class="navbar navbar-expand-lg bg-light fixed-top w-100">
     <div class="container-fluid">
       <a class="navbar-brand logo" href="/">
         <img
@@ -51,7 +51,7 @@
           </li>
           <li class="carrinho">
             <button
-              class="btn btn-primary"
+              class="btn carrinho-icon"
               type="button"
               data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasRight"
@@ -130,6 +130,10 @@ const removeCarrinho = (index) => {
 </script>
 
 <style scoped>
+.carrinho-icon {
+  background-color: #e3a1b0;
+  color: #FFFFFFFF;
+}
 .logo {
   font-family: 'Merienda', cursive;
 }
@@ -145,5 +149,20 @@ const removeCarrinho = (index) => {
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
+.navbar {
+  background-color: #ffd9e3 !important;
+  padding: 20px;
+  top: 0;
+  z-index: 10;
+}
 
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .image {
+    width: 50%;
+  }
+}
 </style>

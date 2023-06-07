@@ -1,4 +1,5 @@
 <template>
+  <h1><strong>Produtos</strong></h1>
   <div class="row">
     <div class="col col-12 col-md-3" v-for="(produto, index) in produtos" :key="index">
       <ProdutosCard :data="produto" />
@@ -23,3 +24,9 @@ onMounted(() => {
   store.fetchProdutosCategoria(route.params.id)
 })
 </script>
+
+<style scoped>
+.col {
+  margin-bottom: 1.2rem;
+}
+</style>

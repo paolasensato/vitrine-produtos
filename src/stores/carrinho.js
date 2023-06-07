@@ -20,4 +20,5 @@ export const useCarrinhoStore = defineStore({
       console.log(this.carrinho);
     },
   },
+  persist: true,
 });

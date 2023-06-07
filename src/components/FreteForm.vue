@@ -9,15 +9,30 @@
         placeholder="Digite seu cep"
         v-model="form.cep_destino"
         aria-describedby="buscar"
+        required
       />
       <button type="submit" class="btn btn-primary" id="buscar">Buscar</button>
     </div>
   </form>
+  <span v-show="mostraValorPrazo == true">
+    Valor do frete <strong>R$ {{ fretePac.Valor }}</strong>
+    <br />
+    Prazo de Entrega R$ <strong>{{ fretePac.PrazoEntrega }} dias úteis</strong>
+  </span>
+  <span v-show="mensagemErro == true">
+    <div class="alert alert-warning d-flex align-items-center" role="alert">
+      <InfoIcon />
+      <div class="text-alert">
+        Ops..! Parece que houve um erro com o cep digitado. Que tal tentar outro CEP?
+      </div>
+    </div>
+  </span>
 </template>
 
 <script setup>
 import { reactive, ref } from 'vue'
 import axios from '../api/axios.config'
+import InfoIcon from './icons/Info.vue'
 
 const props = defineProps({
   data: Number
@@ -27,8 +42,9 @@ const form = reactive({
   cep_destino: ''
 })
 
-let fretePac = ref({})
-let mensagemErro = ref({})
+let fretePac = ref('')
+let mostraValorPrazo = ref(false)
+let mensagemErro = ref(false)
 
 const onSubmit = async () => {
   const { cep_destino } = form
@@ -43,7 +59,23 @@ const onSubmit = async () => {
     `/calcula-frete/${cep_destino}/${peso}/${valor}/${tipo_do_frete}/${altura}/${largura}/${comprimento}`
   )
 
-  if (data.cServico) fretePac = data.cServico
-  else if (data.erro) mensagemErro = data.erro
+  if (data.cServico.Valor == '0,00') {
+    mostraValorPrazo = false
+    return mensagemErro = true
+  }
+  fretePac.value = data.cServico
+  mensagemErro = false
+  mostraValorPrazo = true
 }
 </script>
+
+<style scoped>
+.btn {
+  background-color: #404040;
+  border: 0;
+}
+
+.text-alert {
+  margin-left: 5px;
+}
+</style>

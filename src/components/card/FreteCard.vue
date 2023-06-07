@@ -10,7 +10,7 @@
     </div>
     <div class="space"></div>
     <div class="addCarrinho">
-      <button class="btn btn-success block" type="submit" @click="addCarrinho">
+      <button class="btn btn-primary block" type="submit" @click="addCarrinho">
         <CartAdd /> Comprar
       </button>
     </div>
@@ -53,12 +53,15 @@ const addCarrinho = () => {
   width: 100%;
   height: 1px;
 }
-.btn-success {
+.btn-primary {
   margin-top: 30px;
   margin-bottom: 30px;
   width: 100%;
   padding: 12px;
-  background-color: #40cd28;
+  background-color: #404040;
   border: 0;
+}
+.btn-primary:hover {
+  background-color: #40cd28;
 }
 </style>

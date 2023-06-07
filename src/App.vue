@@ -25,6 +25,10 @@ onMounted(() => {
 
 #app,
 html {
-  background-color: #f6f9ff;
+  background-color: #ffeef0;
+}
+
+.container {
+  margin-top: 6rem;
 }
 </style>
