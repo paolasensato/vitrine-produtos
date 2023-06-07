@@ -40,5 +40,6 @@ export const useProdutoStore = defineStore('produtos', {
           alert(error)
         })
     }
-  }
+  }, 
+  persist: true
 })

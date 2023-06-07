@@ -9,6 +9,11 @@
       </div>
     </div>
   </section>
+
+  <section class="produtos-relacionados">
+    <h5>Compre Também</h5>
+    <ProdutosCarousel :produtos="produtos"/>
+  </section>
 </template>
 
 <script setup>
@@ -17,12 +22,17 @@ import { useProdutoStore } from '../stores/produto'
 import { useRoute } from 'vue-router'
 import ProdutoCard from '../components/card/ProdutoCard.vue'
 import FreteCard from '../components/card/FreteCard.vue'
+import ProdutosCarousel from '../components/carousel/ProdutosCarousel.vue'
 
 const route = useRoute()
 const store = useProdutoStore()
 
 const produto = computed(() => {
   return store.getProduto
+})
+
+const produtos = computed(() => {
+  return store.getProdutos
 })
 
 onMounted(() => {
