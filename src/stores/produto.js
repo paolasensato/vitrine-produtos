@@ -5,7 +5,8 @@ import formataValor from '../helpers/formataValor.js'
 export const useProdutoStore = defineStore('produtos', {
   state: () => ({
     produtos: [],
-    produto: {}
+    produto: {},
+    produtosRelacionados: [],
   }),
   getters: {
     getProdutos(state) {
@@ -13,6 +14,9 @@ export const useProdutoStore = defineStore('produtos', {
     },
     getProduto(state) {
       return state.produto
+    },
+    getProdutosRelacionados(state) {
+      return state.produtosRelacionados
     }
   },
   actions: {
@@ -39,7 +43,21 @@ export const useProdutoStore = defineStore('produtos', {
         .catch((error) => {
           alert(error)
         })
+    },
+    async fetchProdutosRelacionados() {
+      await axios
+        .get('/produtos-relacionados')
+        .then((response) => {
+          this.produtosRelacionados = response.data
+          this.produtosRelacionados.map((produto) => {
+            produto.valor = formataValor(produto.valor)
+          })
+          console.log(response);
+        })
+        .catch((error) => {
+          alert(error)
+        })
     }
-  }, 
+  },
   persist: true
 })

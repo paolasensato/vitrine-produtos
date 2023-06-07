@@ -40,11 +40,12 @@ const produto = computed(() => {
 })
 
 const produtos = computed(() => {
-  return store.getProdutos
+  return store.getProdutosRelacionados
 })
 
 onMounted(() => {
   store.fetchProduto(route.params.id)
+  store.fetchProdutosRelacionados()
 })
 </script>
 
