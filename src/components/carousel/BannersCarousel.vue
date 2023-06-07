@@ -1,10 +1,10 @@
 <template>
-  <div id="carousel-home" class="carousel slide" data-bs-ride="carousel">
+  <div id="carousel-home" class="carousel slide d-block" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img
           src="../../assets/carousel/banner1.png"
-          class="d-block w-100"
+          class="d-block w-100 img-fluid"
           alt="..."
           data-bs-interval="5"
         />
@@ -12,7 +12,7 @@
       <div class="carousel-item">
         <img
           src="../../assets/carousel/banner2.png"
-          class="d-block w-100"
+          class="d-block w-100 img-fluid"
           alt="..."
           data-bs-interval="5"
         />
@@ -20,7 +20,7 @@
       <div class="carousel-item">
         <img
           src="../../assets/carousel/banner3.png"
-          class="d-block w-100"
+          class="d-block w-100 img-fluid"
           alt="..."
           data-bs-interval="5"
         />
@@ -46,3 +46,10 @@
     </button>
   </div>
 </template>
+
+<style scoped>
+.carousel {
+  width: 75%;
+  margin-left: 12%;
+}
+</style>

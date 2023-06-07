@@ -3,6 +3,7 @@
   <div class="container">
     <RouterView />
   </div>
+  <Footer />
 </template>
 
 <script setup>
@@ -11,6 +12,7 @@ import { RouterView } from 'vue-router'
 import { onMounted } from 'vue'
 import { useCategoriaStore } from './stores/categoria'
 import { useProdutoStore } from './stores/produto'
+import Footer from './components/Footer.vue'
 
 onMounted(() => {
   useCategoriaStore().fetchCategorias()
