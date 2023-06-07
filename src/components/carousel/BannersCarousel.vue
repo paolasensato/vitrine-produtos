@@ -52,4 +52,11 @@
   width: 75%;
   margin-left: 12%;
 }
+
+@media screen and (max-width: 768px) {
+  .carousel {
+    width: 100%;
+    margin: 0;
+  }
+}
 </style>

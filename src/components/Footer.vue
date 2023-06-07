@@ -11,7 +11,7 @@
 
 <style scoped>
 .logo {
-  width: 150px;
+  width: 100px;
 }
 .footer {
   background-color: #ffcad6;

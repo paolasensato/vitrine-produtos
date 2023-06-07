@@ -52,7 +52,6 @@ export const useProdutoStore = defineStore('produtos', {
           this.produtosRelacionados.map((produto) => {
             produto.valor = formataValor(produto.valor)
           })
-          console.log(response);
         })
         .catch((error) => {
           alert(error)
