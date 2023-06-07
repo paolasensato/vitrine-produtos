@@ -5,7 +5,7 @@
         <img
           src="../../assets/carousel/banner1.png"
           class="d-block w-100 img-fluid"
-          alt="..."
+          alt="banner1"
           data-bs-interval="5"
         />
       </div>
@@ -13,7 +13,7 @@
         <img
           src="../../assets/carousel/banner2.png"
           class="d-block w-100 img-fluid"
-          alt="..."
+          alt="banner2"
           data-bs-interval="5"
         />
       </div>
@@ -21,7 +21,55 @@
         <img
           src="../../assets/carousel/banner3.png"
           class="d-block w-100 img-fluid"
-          alt="..."
+          alt="banner3"
+          data-bs-interval="5"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../../assets/carousel/banner4.png"
+          class="d-block w-100 img-fluid"
+          alt="banner4"
+          data-bs-interval="5"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../../assets/carousel/banner5.png"
+          class="d-block w-100 img-fluid"
+          alt="banner5"
+          data-bs-interval="5"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../../assets/carousel/banner6.png"
+          class="d-block w-100 img-fluid"
+          alt="banner6"
+          data-bs-interval="5"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../../assets/carousel/banner7.png"
+          class="d-block w-100 img-fluid"
+          alt="banner7"
+          data-bs-interval="5"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../../assets/carousel/banner8.png"
+          class="d-block w-100 img-fluid"
+          alt="banner8"
+          data-bs-interval="5"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../../assets/carousel/banner9.png"
+          class="d-block w-100 img-fluid"
+          alt="banner9"
           data-bs-interval="5"
         />
       </div>
