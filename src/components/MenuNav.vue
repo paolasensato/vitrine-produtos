@@ -49,25 +49,101 @@
               </div>
             </ul>
           </li>
+          <li class="carrinho">
+            <button
+              class="btn btn-primary"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
+            >
+              <CartIcon />
+              Carrinho
+            </button>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
+
+  <div
+    class="offcanvas offcanvas-end"
+    tabindex="-1"
+    id="offcanvasRight"
+    aria-labelledby="offcanvasRightLabel"
+  >
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">
+        Carrinho de Compras
+        <CartIcon />
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-group list-group-flush" v-for="(item, index) in carrinho" :key="index">
+        <li class="list-group-item list-item">
+          <div class="row w-100">
+            <div class="col col-12 col-md-4">
+              <img
+                :src="'http://localhost/admin/fotos/' + item.imagem + 'p.jpg'"
+                class="image"
+                :alt="item.produto"
+              />
+            </div>
+            <div class="col col-12 col-md-8">
+              <h5 class="mb-1">{{ item.produto }}</h5>
+              <small>{{ item.valorFormatado }}</small>
+              <button type="button" class="btn btn-link" @click="removeCarrinho(index)">Remover</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script setup>
 import { computed } from 'vue'
 import { useCategoriaStore } from '../stores/categoria'
+import { useCarrinhoStore } from '../stores/carrinho'
+import CartIcon from './icons/Cart.vue'
 
-const store = useCategoriaStore()
+const storeCategorias = useCategoriaStore()
+const storeCarrinho = useCarrinhoStore()
 
 const categorias = computed(() => {
-  return store.getCategorias
+  return storeCategorias.getCategorias
 })
+
+const carrinho = computed(() => {
+  return storeCarrinho.getCarrinho
+})
+
+const removeCarrinho = (index) => {
+  useCarrinhoStore().removeItem(index)
+}
 </script>
 
-<style>
+<style scoped>
 .logo {
   font-family: 'Merienda', cursive;
 }
+.carrinho {
+  flex-grow: inherit;
+}
+.image {
+  width: 50px;
+}
+.list-item {
+  border-bottom: .5px solid;
+  border-color: #66666666;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
 </style>

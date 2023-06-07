@@ -1,17 +1,17 @@
 <template>
   <form @submit.prevent="onSubmit">
     <legend>Calcular Frete</legend>
-    <div class="mb-3">
-      <label for="cep" class="form-label">Cep</label>
+    <div class="input-group mb-3">
       <input
-        v-model="form.cep_destino"
-        type="text"
         id="cep"
+        type="text"
         class="form-control"
         placeholder="Digite seu cep"
+        v-model="form.cep_destino"
+        aria-describedby="buscar"
       />
+      <button type="submit" class="btn btn-primary" id="buscar">Buscar</button>
     </div>
-    <button type="submit" class="btn btn-primary">Buscar</button>
   </form>
 </template>
 
