@@ -15,9 +15,7 @@ export const useCarrinhoStore = defineStore({
       this.carrinho.push(produto);
     },
     removeItem(produto) {
-      console.log(this.carrinho);
       this.carrinho.splice(produto,1);
-      console.log(this.carrinho);
     },
   },
   persist: true,

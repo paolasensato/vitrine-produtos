@@ -4,7 +4,15 @@
       <h2>{{ valorFormatado }}</h2>
       <div class="fs-6 fw-light">em até 6x sem juros no <strong>cartão de crédito</strong></div>
     </div>
+
+    <select class="form-select">
+      <option selected>Selecione um parcelamento</option>
+      <option v-for="(valor, index) in parcelas" :key="index">{{ index }}x de {{ valor }}</option>
+    </select>
+
+    <br />
     <div class="space"></div>
+
     <div class="frete-session">
       <FreteForm :data="valor" />
     </div>
@@ -21,12 +29,45 @@
 import FreteForm from '../FreteForm.vue'
 import CartAdd from '../icons/CartAdd.vue'
 import { useCarrinhoStore } from '../../stores/carrinho'
+import { ref, onMounted, watch, defineProps } from 'vue'
+import formataValor from '../../helpers/formataValor.js'
 
 const props = defineProps({
-  valor: Number,
+  valor: {
+    type: Number,
+    required: true
+  },
   valorFormatado: String,
   produto: Object
 })
+
+const parcelas = ref({})
+
+const calculaParcelas = async (valor) => {
+  const parcelas = {}
+
+  for (let i = 1; i <= 6; i++) {
+    const valorParcela = await formataValor(valor / i)
+    parcelas[i] = valorParcela
+  }
+
+  return parcelas
+}
+
+const calcularParcelas = async (novoValor) => {
+  parcelas.value = await calculaParcelas(novoValor)
+}
+
+onMounted(async () => {
+  await calcularParcelas(props.valor)
+})
+
+watch(
+  () => props.valor,
+  async (novoValor) => {
+    await calcularParcelas(novoValor)
+  }
+)
 
 const addCarrinho = () => {
   useCarrinhoStore().addItem(props.produto)
