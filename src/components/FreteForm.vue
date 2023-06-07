@@ -14,19 +14,19 @@
       <button type="submit" class="btn btn-primary" id="buscar">Buscar</button>
     </div>
   </form>
-  <span v-show="mostraValorPrazo == true">
+  <p v-show="mostraValorPrazo == true">
     Valor: <strong>R${{ fretePac.Valor }}</strong>
     <br />
-    Receba em até R$ <strong>{{ fretePac.PrazoEntrega }} dias úteis</strong>
-  </span>
-  <span v-show="mensagemErro == true">
+    Receba em até <strong>{{ fretePac.PrazoEntrega }} dias úteis</strong>
+  </p>
+  <p v-show="mensagemErro == true">
     <div class="alert alert-warning d-flex align-items-center" role="alert">
       <InfoIcon />
       <div class="text-alert">
         Ops..! Parece que houve um erro com o cep digitado. Que tal tentar outro CEP?
       </div>
     </div>
-  </span>
+  </p>
 </template>
 
 <script setup>
