@@ -1,12 +1,18 @@
 <template>
   <div class="card h-100">
     <div class="card-title valor">
-      <h2>{{ valorFormatado }}</h2>
-      <div class="fs-6 fw-light">em até 6x sem juros no <strong>cartão de crédito</strong></div>
+      <div class="row">
+        <div class="col-6 col-md-12">
+          <span class="text-decoration-line-through valor-original">{{ valorFormatado }}</span>
+          <span class="badge bg-success"><ArrowDownIcon />5%</span>
+        </div>
+      </div>
+      <h3>{{ desconto(valor) }}</h3>
+      <span class="pix fw-light">Com pix</span>
     </div>
 
     <select class="form-select">
-      <option selected>Selecione um parcelamento</option>
+      <option selected>até 6x sem juros no cartão</option>
       <option v-for="(valor, index) in parcelas" :key="index">{{ index }}x de {{ valor }}</option>
     </select>
 
@@ -31,6 +37,7 @@ import CartAdd from '../icons/CartAdd.vue'
 import { useCarrinhoStore } from '../../stores/carrinho'
 import { ref, onMounted, watch, defineProps } from 'vue'
 import formataValor from '../../helpers/formataValor.js'
+import ArrowDownIcon from '../icons/ArrowDown.vue'
 
 const props = defineProps({
   valor: {
@@ -42,6 +49,10 @@ const props = defineProps({
 })
 
 const parcelas = ref({})
+
+const desconto = (valor) => {
+  return formataValor(valor - valor * 0.05)
+}
 
 const calculaParcelas = async (valor) => {
   const parcelas = {}
@@ -83,7 +94,7 @@ const addCarrinho = () => {
   padding: 0px 30px;
 }
 .card-title {
-  padding: 30px 0px;
+  padding-top: 30px;
 }
 .frete-session {
   padding: 20px 0px 30px;
@@ -99,10 +110,26 @@ const addCarrinho = () => {
   margin-bottom: 30px;
   width: 100%;
   padding: 12px;
-  background-color: #404040;
+  background-color: #e3a1b0;
   border: 0;
 }
-.btn-primary:hover {
-  background-color: #40cd28;
+.btn-primary:hover,
+.bg-success {
+  background-color: #40cd28 !important;
+}
+.valor-original {
+  color: #c2c2c2;
+  margin: 0;
+  padding: 0;
+  font-size: small;
+}
+.badge {
+  margin-left: 10px;
+  font-size: 10px;
+}
+.pix {
+  font-size: small;
+  margin: 0;
+  padding: 0;
 }
 </style>

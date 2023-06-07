@@ -15,9 +15,9 @@
     </div>
   </form>
   <span v-show="mostraValorPrazo == true">
-    Valor do frete <strong>R$ {{ fretePac.Valor }}</strong>
+    Valor: <strong>R${{ fretePac.Valor }}</strong>
     <br />
-    Prazo de Entrega R$ <strong>{{ fretePac.PrazoEntrega }} dias úteis</strong>
+    Receba em até R$ <strong>{{ fretePac.PrazoEntrega }} dias úteis</strong>
   </span>
   <span v-show="mensagemErro == true">
     <div class="alert alert-warning d-flex align-items-center" role="alert">
@@ -71,7 +71,7 @@ const onSubmit = async () => {
 
 <style scoped>
 .btn {
-  background-color: #404040;
+  background-color: #e3a1b0;
   border: 0;
 }
 

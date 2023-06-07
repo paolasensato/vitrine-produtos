@@ -98,7 +98,7 @@
             <div class="col col-12 col-md-8">
               <h5 class="mb-1">{{ item.produto }}</h5>
               <small>{{ item.valorFormatado }}</small>
-              <button type="button" class="btn btn-link" @click="removeCarrinho(index)">Remover</button>
+              <button type="button" class="btn btn-sm trash" @click="removeCarrinho(index)"><TrashIcon/></button>
             </div>
           </div>
         </li>
@@ -112,6 +112,7 @@ import { computed } from 'vue'
 import { useCategoriaStore } from '../stores/categoria'
 import { useCarrinhoStore } from '../stores/carrinho'
 import CartIcon from './icons/Cart.vue'
+import TrashIcon from './icons/Trash.vue'
 
 const storeCategorias = useCategoriaStore()
 const storeCarrinho = useCarrinhoStore()
@@ -158,6 +159,10 @@ const removeCarrinho = (index) => {
 
 .navbar-collapse {
     flex-grow: 0;
+}
+
+.trash {
+  color: red;
 }
 
 @media screen and (max-width: 768px) {

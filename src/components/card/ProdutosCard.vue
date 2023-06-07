@@ -1,6 +1,6 @@
 <template>
   <RouterLink :to="'/produtos/' + id" class="link">
-    <div class="card h-100">
+    <div class="card shadowh-100">
       <img
         :src="'http://localhost/admin/fotos/' + imagem + 'p.jpg'"
         :alt="produto"
@@ -24,14 +24,24 @@ const props = defineProps({
 const { id, produto, valor, imagem } = props.data
 </script>
 
-<style>
+<style scoped>
 .link {
   text-decoration: none;
 }
 .card {
-  border: 0;
+  border: 0;  
+  transition: 0.5s;
 }
+
+.card:hover {
+  transform: scale(1.02);
+}
+
 .card-img {
   border-radius: 10px 10px;
+  
+}
+.card-text {
+  color: #ef5fa5;
 }
 </style>
