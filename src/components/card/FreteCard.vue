@@ -40,10 +40,7 @@ import formataValor from '../../helpers/formataValor.js'
 import ArrowDownIcon from '../icons/ArrowDown.vue'
 
 const props = defineProps({
-  valor: {
-    type: Number,
-    required: true
-  },
+  valor: Number,
   valorFormatado: String,
   produto: Object
 })

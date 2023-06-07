@@ -39,5 +39,6 @@ export const useCategoriaStore = defineStore('categorias', {
           alert(error)
         })
     }
-  }
+  },
+  persist: true
 })
