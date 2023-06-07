@@ -3,7 +3,7 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img
-          src="../assets/carousel/banner1.png"
+          src="../../assets/carousel/banner1.png"
           class="d-block w-100"
           alt="..."
           data-bs-interval="5"
@@ -11,7 +11,7 @@
       </div>
       <div class="carousel-item">
         <img
-          src="../assets/carousel/banner2.png"
+          src="../../assets/carousel/banner2.png"
           class="d-block w-100"
           alt="..."
           data-bs-interval="5"
@@ -19,7 +19,7 @@
       </div>
       <div class="carousel-item">
         <img
-          src="../assets/carousel/banner3.png"
+          src="../../assets/carousel/banner3.png"
           class="d-block w-100"
           alt="..."
           data-bs-interval="5"
